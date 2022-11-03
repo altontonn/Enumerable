@@ -13,4 +13,10 @@ module MyEnumerable
       check_value = true if yield enum
     end
   end
+
+  def filter
+    array = []
+    each { |i| array << i if yield i }
+    array
+  end
 end
