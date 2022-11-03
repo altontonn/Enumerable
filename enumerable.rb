@@ -6,4 +6,11 @@ module MyEnumerable
     end
     check_value
   end
+
+  def any?
+    check_value = true
+    each do |enum|
+      check_value = true if yield enum
+    end
+  end
 end
